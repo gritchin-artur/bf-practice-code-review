@@ -1,11 +1,20 @@
 /** .........
- * Sum of two numbers.
+ * Repeated values are not duplicated
+ * in the return value, and the order of result
+ * values are determined by the first array
  *
- * @param {number} num1 - The first number to sum.
- * @param {number} num2 - The second number to sum.
- * @returns {number} The sum of num1 and num2.
+ * @param {Array} [array=[]] - The array to inspect.
+ * @param {Array} [values=[]] - The values to exclude.
+ * @returns {Array} Returns the new array of filtered
  */
 
-export const solutionName = (num1, num2) => {
-    return num1 + num2;
+export const difference = (array = [], values = []) => {
+    const newArr = [];
+
+    for (let i = 0; i < array.length; i++) {
+        if (!values.includes(array[i]) && !newArr.includes(array[i])) {
+            newArr.push(array[i]);
+        }
+    }
+    return newArr;
 };

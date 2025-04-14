@@ -1,10 +1,20 @@
 /** .........
- * Sum of two numbers.
+ * Deeper flat array.
  *
- * @param {number} num1 - The first number to sum.
- * @param {number} num2 - The second number to sum.
- * @returns {number} The sum of num1 and num2.
+ * @param {Array} [array=[]] - The array to flatten.
+ * @returns {Array} Returns the new flattened array.
  */
-export const solutionName = (num1, num2) => {
-    return num1 + num2;
+export const deepFlat = (array = []) => {
+    const newArr = [];
+
+    for (let el of array) {
+        if (Array.isArray(el)) {
+            newArr.push(...deepFlat(el));
+        } else {
+            newArr.push(el);
+        }
+    }
+
+    return newArr;
+    // return array.flat(Infinity);
 };

@@ -22,7 +22,7 @@ helps you understand:
  * @returns {Array} Returns the new array of filtered values.
  * @example
  *
- * intersection([2, 1], [2, 3]);
+ *intersection ([2, 1], [2, 3]);
  * // -> [2]
  *
  * @example
